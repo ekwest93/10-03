@@ -22,36 +22,11 @@ rsync -a --checksum --verbose --delete --progress --exclude '.*' /home/test/ /tm
 - Резервная копия размещается локально, в директории `/tmp/backup`
 - На проверку направить файл crontab и скриншот с результатом работы утилиты.
 
-### *Решение:*
-```bash
-# Edit this file to introduce tasks to be run by cron.
-# 
-# Each task to run has to be defined through a single line
-# indicating with different fields when the task will be run
-# and what command to run for the task
-# 
-# To define the time you can provide concrete values for
-# minute (m), hour (h), day of month (dom), month (mon),
-# and day of week (dow) or use '*' in these fields (for 'any').
-# 
-# Notice that tasks will be started based on the cron's system
-# daemon's notion of time and timezones.
-# 
-# Output of the crontab jobs (including errors) is sent through
-# email to the user the crontab file belongs to (unless redirected).
-# 
-# For example, you can run a backup of all your user accounts
-# at 5 a.m every week with:
-# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
-# 
-# For more information see the manual pages of crontab(5) and cron(8)
-# 
-# m h  dom mon dow   command
-38 15 * * * /bin/bash /home/test/every_day_backup.sh /home/test/ /tmp/backup
-```
-### Результат работы утилиты
+<img width="704" height="527" alt="image" src="https://github.com/user-attachments/assets/3feb8e36-c5e9-4a38-a8b5-46c7d11f3387" />
 
-### Проверка работы скрипта и утилиты
+
+
+### Cкрипт
 
 ```bash
 #!/bin/bash
@@ -67,10 +42,12 @@ else
   echo -e "\033[32m----- | $(date +"%Y-%m-%d | %H:%M:%S") | Backup completed Successfully! | -----\033[0m" >> /var/log/rsync-cron-$(date +"%Y-%m-%d").log
 fi
 ```
-#### Файл crontab
+
 
 ### Результат
-#### Файл rsync-cron-2023-08-26.log: [rsync-cron-2023-08-26.log](https://github.com/tverdyakov/portfolio-tverdyakov/blob/main/Experience%2C%20skills%20and%20abilities/Netology/10.%20Отказоустойчивость/03.%20Резервное%20копирование/screenshots-and-files/rsync-cron-2023-08-26.log)
+<img width="636" height="301" alt="image" src="https://github.com/user-attachments/assets/72e3ef89-be82-4991-83ea-13b6608c0872" />
+<img width="1018" height="800" alt="image" src="https://github.com/user-attachments/assets/1c7d071d-b237-4a89-8815-de3eaad1b662" />
+
 
 
 ---
